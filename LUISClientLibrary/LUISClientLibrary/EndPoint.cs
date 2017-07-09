@@ -10,7 +10,7 @@ namespace LUISClientLibrary
     /// End point object 
     /// contains end point data
     /// </summary>
-    class EndPoint
+    public class EndPoint
     {
         /// <summary>
         /// Endpoint version Id
@@ -36,6 +36,14 @@ namespace LUISClientLibrary
         /// Datetime the end point was published 
         /// </summary>
         public DateTime PublishedDateTime { get; set; }
-
+        /// <summary>
+        /// Defualt construct sets all string to empty, date time to min value and is staging as false 
+        /// </summary>
+        public EndPoint()
+        {
+            VersionID = Url = AssignedKey = Region = "";
+            IsStaging = false;
+            PublishedDateTime = DateTime.MinValue;
+        }
     }
 }
